@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "Prueba",
+			"path": "../../../Documentos/PlatformIO/Projects/Prueba"
+		},
+		{
+			"name": "Practica 3",
+			"path": "../../../Documentos/PlatformIO/Projects/Practica 3"
+		}
+	],
+	"settings": {}
+}
