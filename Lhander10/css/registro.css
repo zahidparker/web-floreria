@@ -1,0 +1,171 @@
+/* --- ESTILOS GENERALES Y FUENTE --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Establece una altura EXACTA a la de la pantalla */
+    margin: 0;
+    overflow: hidden; /* Oculta cualquier contenido que se desborde (scroll) */
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* --- CONTENEDOR PRINCIPAL DEL FORMULARIO --- */
+/* DESPUÉS */
+.form-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px 32px; /* Reducido de 24px 32px */
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+/* DESPUÉS */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px; /* Reducido de 24px */
+}
+
+.form-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1c1e21;
+}
+
+/* --- GRUPOS DE FORMULARIO Y ETIQUETAS FLOTANTES --- */
+/* DESPUÉS */
+.form-group {
+    margin-bottom: 0; /* Reducido de 16px */
+    position: relative;
+}
+
+.floating-label {
+    position: relative;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #606770;
+    transition: all 0.2s ease-in-out;
+}
+
+.floating-label input {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 22px 16px 10px 16px;
+    border: 1px solid #ccd0d5;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.floating-label input:focus {
+    border-color: #E7008A;
+    outline: none;
+}
+
+/* La magia de la etiqueta flotante */
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+    top: 8px;
+    transform: translateY(0);
+    font-size: 12px;
+    color: #E7008A;
+}
+
+
+/* --- FILAS Y CAMPOS ESPECÍFICOS --- */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+.form-row .form-group {
+    flex: 1;
+}
+
+/* --- GRUPO DE TELÉFONO --- */
+.phone-group {
+    display: flex;
+    gap: 8px;
+}
+.country-code select {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px 10px;
+    border: 1px solid #ccd0d5;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f5f6f7;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+
+/* --- BOTÓN PRINCIPAL --- */
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #FD8CC2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px #F25ABB;
+}
+
+.register-link a:hover {
+    color: blue;
+    text-decoration: none;
+    font-size: 12px;
+
+}
+
+p{
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 15px;
+}
+
+/* Estilos para el mensaje de error de la contraseña */
+.error-message {
+    color: #d93025; /* Color rojo para el error */
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 15px; /* Evita que el formulario "salte" al aparecer el texto */
+}
+
+/* Estilo para el campo de entrada cuando hay un error */
+input.error {
+    border-color: #d93025 !important;
+}

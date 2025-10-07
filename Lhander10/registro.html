@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+   ================================================== -->
+    <meta charset="utf-8">
+    <title>Detallistas</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+   ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/registro.css">
+
+    <!-- script
+   ================================================== -->
+    <script src="js/modernizr.js"></script>
+
+    <!-- favicons
+	================================================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+    <!-- header 
+   ================================================== -->
+    <header>
+
+        <div class="row">
+
+            <div class="logo">
+                <a href="index.html">Detallistas</a>
+            </div>
+
+            <nav id="main-nav-wrap">
+                <ul class="main-navigation">
+                    <li><a class="smoothscroll" href="index.html" title="">Inicio</a></li>
+                    <li class="current highlight with-sep"><a href="#" title="">Registrate</a></li>
+                </ul>
+            </nav>
+
+            <a class="menu-toggle" href="#"><span>Menu</span></a>
+
+        </div>
+
+    </header> <!-- /header -->
+    <section id="intro">
+        <div class="form-container">
+            <form action="registrar_usuario.php" method="post">
+                <div class="form-header">
+                    <h2>Crea una cuenta</h2>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group floating-label">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre(s)" required>
+                    </div>
+                    <div class="form-group floating-label">
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellidos" required>
+                    </div>
+                </div>
+
+                <div class="form-group floating-label">
+                    <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                </div>
+
+                <div class="form-group phone-group">
+                    <div class="country-code">
+                        <select id="codigo_pais" name="codigo_pais">
+                            <option value="+52" selected>+52</option>
+                        </select>
+                    </div>
+                    <div class="floating-label flex-grow">
+                        <input type="tel" id="telefono" name="telefono" placeholder="Número de telefono" required>
+                    </div>
+                </div>
+                <div class="form-group floating-label">
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                    <div id="password-error" class="error-message"></div>
+                </div>
+                <button type="submit" class="submit-btn">Crear cuenta</button>
+                <div class="register-link">
+                    <p>Ya tengo una cuenta <a href="formulario.html">Inicia sesión</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        // Espera a que todo el contenido de la página se cargue
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Selecciona el formulario y los campos necesarios
+            const form = document.querySelector('form');
+            const passwordInput = document.getElementById('contrasena');
+            const errorDiv = document.getElementById('password-error');
+
+            // Escucha el evento 'submit' del formulario
+            form.addEventListener('submit', function (event) {
+
+                const passwordValue = passwordInput.value;
+
+                // Define las condiciones que debe cumplir la contraseña
+                const hasUpperCase = /[A-Z]/.test(passwordValue);
+                const hasNumber = /\d/.test(passwordValue);
+                const isLongEnough = passwordValue.length >= 8;
+
+                // Si alguna de las condiciones no se cumple...
+                if (!hasUpperCase || !hasNumber || !isLongEnough) {
+
+                    // 1. Evita que el formulario se envíe
+                    event.preventDefault();
+
+                    // 2. Muestra un mensaje de error detallado
+                    errorDiv.textContent = 'La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.';
+
+                    // 3. Añade la clase de error al campo para que el borde se ponga rojo
+                    passwordInput.classList.add('error');
+
+                } else {
+                    // Si la contraseña es válida, limpia cualquier mensaje de error anterior
+                    errorDiv.textContent = '';
+                    passwordInput.classList.remove('error');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
