@@ -100,6 +100,43 @@
 	});
 
 
+        document.addEventListener('DOMContentLoaded', function() {
+            const navList = document.querySelector('.main-navigation');
+            const navLinks = document.querySelectorAll('.main-navigation li');
+            const currentLink = document.querySelector('.main-navigation li.current');
+
+            // Función que mueve la barra al elemento que se le indique
+            function moveBar(element) {
+                if (element) {
+                    const elementWidth = element.offsetWidth; // Ancho del elemento
+                    const elementLeft = element.offsetLeft;   // Distancia desde el borde izquierdo del contenedor
+
+                    // Actualiza las variables CSS en el contenedor de la navegación
+                    navList.style.setProperty('--bar-width', `${elementWidth}px`);
+                    navList.style.setProperty('--bar-left', `${elementLeft}px`);
+                }
+            }
+
+            // 1. Al cargar la página, mueve la barra al elemento "current"
+            moveBar(currentLink);
+
+            // 2. Para cada enlace del menú, añade un "escuchador" de clics
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    // Primero, quita la clase 'current' de todos los elementos
+                    navLinks.forEach(item => item.classList.remove('current'));
+                    
+                    // Luego, añade la clase 'current' solo al que se hizo clic
+                    this.classList.add('current');
+
+                    // Finalmente, mueve la barra al elemento que se acaba de hacer clic
+                    // (Ojo: esto es visual, no detiene la navegación a la nueva página)
+                    moveBar(this);
+                });
+            });
+        });
+
+
 	/*----------------------------------------------------*/
   	/* Flexslider
   	/*----------------------------------------------------*/
