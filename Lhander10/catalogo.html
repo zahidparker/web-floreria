@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="es"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Catálogo - Detallistas</title>
+	<meta name="description" content="Catálogo de productos de flores y arreglos florales">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/vendor.css">
+   <link rel="stylesheet" href="css/catalogo.css">     
+
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header>
+
+   	<div class="row">
+
+   		<div class="logo">
+	         <a href="index.html">Detallistas</a>
+	      </div>
+
+	   	<nav id="main-nav-wrap">
+				<ul class="main-navigation">
+					<li><a href="index.html" title="">Inicio</a></li>
+					<li><a href="index.html#process" title="">Nosotros</a></li>
+					<li><a href="index.html#features" title="">Arreglos</a></li>
+					<li><a href="index.html#pricing" title="">Promociones</a></li>
+					<li><a href="index.html#faq" title="">¿Dudas?</a></li>
+					<li class="current"><a href="catalogo.html" title="">Catálogo</a></li>
+					<li class="highlight with-sep"><a href="formulario.html" title="">Registrate</a></li>					
+				</ul>
+			</nav>
+
+			<a class="menu-toggle" href="#"><span>Menu</span></a>
+   		
+   	</div>   	
+   	
+   </header> <!-- /header -->
+
+	<!-- catalog section
+   ================================================== -->
+   <section id="catalog" class="gray-section">
+
+   	<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Nuestros Productos</h5>
+   			<h1>Catálogo de Flores y Arreglos</h1>
+
+   			<p class="lead">Descubre nuestra amplia selección de flores frescas, arreglos florales únicos y regalos especiales para cada ocasión.</p>
+
+   		</div>   		
+   	</div>
+
+   	<!-- catalog controls -->
+   	<div class="row catalog-controls">
+   		<div class="col-twelve">
+
+   			<!-- search bar -->
+   			<div class="search-container">
+   				<input type="text" id="search-input" placeholder="Buscar productos..." autocomplete="off">
+   				<button type="button" id="search-btn">
+   					<i class="icon ion-android-search"></i>
+   				</button>
+   			</div>
+
+   			<!-- filters and sort -->
+   			<div class="filter-sort-container">
+   				<div class="filter-group">
+   					<label for="category-filter">Categoría:</label>
+   					<select id="category-filter">
+   						<option value="todas">Todas las categorías</option>
+   						<option value="rosas">Rosas</option>
+   						<option value="tulipanes">Tulipanes</option>
+   						<option value="girasoles">Girasoles</option>
+   						<option value="arreglos">Arreglos Especiales</option>
+   						<option value="bodas">Bodas</option>
+   						<option value="cumpleanos">Cumpleaños</option>
+   					</select>
+   				</div>
+
+   				<div class="sort-group">
+   					<label for="sort-select">Ordenar por:</label>
+   					<select id="sort-select">
+   						<option value="nombre-asc">Nombre (A-Z)</option>
+   						<option value="nombre-desc">Nombre (Z-A)</option>
+   						<option value="precio-asc">Precio (Menor a Mayor)</option>
+   						<option value="precio-desc">Precio (Mayor a Menor)</option>
+   						<option value="popularidad">Más Populares</option>
+   					</select>
+   				</div>
+   			</div>
+
+   		</div>
+   	</div>
+
+   	<!-- products grid -->
+   	<div class="row catalog-content">
+   		<div class="col-twelve">
+
+   			<div id="products-grid" class="products-grid">
+   				<!-- Products will be dynamically loaded here -->
+   			</div>
+
+   			<!-- pagination -->
+   			<div class="pagination-container">
+   				<div class="pagination-info">
+   					<span id="pagination-info">Mostrando <span id="showing-start">1</span>-<span id="showing-end">12</span> de <span id="total-products">36</span> productos</span>
+   				</div>
+   				<div class="pagination-controls">
+   					<button id="prev-page" class="pagination-btn" disabled>
+   						<i class="icon ion-android-arrow-back"></i> Anterior
+   					</button>
+   					<div id="page-numbers" class="page-numbers">
+   						<!-- Page numbers will be dynamically generated -->
+   					</div>
+   					<button id="next-page" class="pagination-btn">
+   						Siguiente <i class="icon ion-android-arrow-forward"></i>
+   					</button>
+   				</div>
+   			</div>
+
+   		</div>
+   	</div>
+
+   </section> <!-- /catalog -->
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+   	<div class="footer-main">
+
+	      <div class="row">
+
+	      	<div class="col-three tab-six mob-full footer-info">            
+
+	            <h4>Acerca de Detallistas</h4>
+
+	            <p>
+	            Somos una florería especializada en crear momentos únicos y especiales a través de nuestros hermosos arreglos florales. Cada flor cuenta una historia.
+	            </p>
+
+	      	</div> <!-- /footer-info -->
+
+	      	<div class="col-three tab-six mob-full footer-contact">
+
+	      		<h4>Información de Contacto</h4>
+
+	      		<p>
+	            Av. Constitución 123<br>
+				Monterrey, N.L. 64000<br>
+				México <br>
+				<span>Teléfono: (+52) 81 1234 5678</span> <br>
+				<span>Email: <a href="mailto:contacto@detallistas.com">contacto@detallistas.com</a></span>
+				</p>
+
+	      	</div> <!-- /footer-contact -->
+
+	      	<div class="col-two tab-six mob-full footer-social">
+
+	      		<h4>Síguenos</h4>
+
+	      		<ul class="footer-social-list">
+		      		<li><a href="#" target="_blank">Facebook</a></li>
+		      		<li><a href="#" target="_blank">Instagram</a></li>
+		      		<li><a href="#" target="_blank">Twitter</a></li>
+		      	</ul>
+
+	      	</div> <!-- /footer-social -->
+
+	      	<div class="col-four tab-twelve footer-subscribe">
+
+	      		<h4>Suscríbete a nuestro boletín</h4>
+
+	      		<p>Recibe las últimas ofertas y novedades en arreglos florales directamente en tu correo.</p>
+
+	      		<div class="subscribe-form">
+
+	      			<form id="mc-form" class="group" novalidate="true">
+
+							<input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="Correo electrónico" required=""> 
+	   						
+	   						<input type="submit" name="subscribe" value="Suscribirse">
+	   						
+	   						<label for="mc-email" class="subscribe-message"></label>
+							
+						</form>
+
+	      		</div>	      		
+	      	           	
+	      	</div> <!-- /footer-subscribe -->         
+
+	      </div> <!-- /row -->
+
+   	</div> <!-- /footer-main -->
+
+
+      <div class="footer-bottom">
+
+      	<div class="row">
+
+      		<div class="col-twelve">
+
+		         <div id="go-top" style="display: block;">
+		            <a class="smoothscroll" title="Volver arriba" href="#top"><i class="icon ion-android-arrow-up"></i></a>
+		         </div>         
+	      	</div>
+
+      	</div> <!-- /footer-bottom -->     	
+
+      </div>
+
+   </footer>  
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="js/jquery-1.11.3.min.js"></script>
+   <script src="js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="js/plugins.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/catalogo.js"></script>
+
+</body>
+
+</html>
